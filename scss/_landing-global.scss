@@ -1,0 +1,79 @@
+body {
+	@include font-smoothing(on);
+}
+h1, h2, h3, h4, h5 {
+	font-family: $font-header;
+}
+a {
+	text-decoration: none;
+}
+img {
+	max-width: 100%;
+}
+.article-ckeditor {
+	padding: 0 20px;
+}
+
+
+
+ /*----------  Fashion Category  ----------*/
+ 
+
+.banner-2col {
+	@include columns((2), $margin: 15px);
+
+	a {
+		display: block;
+	}
+}
+
+.banner-slider {
+	@include columns((3), $margin: 15px);
+}
+
+.top-brand {
+	margin: 15px auto 20px;
+	h3 {
+		margin: 0;
+		text-transform: uppercase;
+		font-size: 32px;
+		line-height: 38px;
+		font-weight: 400;
+	}
+	> .-left {
+		float: left;
+	}
+	> .-right {
+		float: right;
+	}
+	> .row {
+		@include columns((4), $margin: 0 12px);
+		clear: both;
+	}
+	> .-right {
+		font-size: 18px;
+		color: #666;
+		font-family: 'db_ozone_xmedium';
+		text-transform: uppercase;
+		display: inline-block;
+		position: relative;
+		top: 10px;
+
+		&:after{
+			content: '';
+			background: url(../img/chevron-circle-right_2x.png) no-repeat;
+			position: relative;
+			@include size(16px);
+			display: inline-block;
+			background-size: 16px;
+			margin-left: 5px;
+			top: 3px;
+		}
+	}
+}
+
+
+/*----------  Beauty  ----------*/
+.banner-4col {
+	@include columns((4), $margin: 15px);
+}
