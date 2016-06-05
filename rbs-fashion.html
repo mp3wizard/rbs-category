@@ -15,42 +15,81 @@
             <article class="article-ckeditor">
                 <section class="banner-2col">
                     <a href="javascript:void(0);">
-                        <img src="https://unsplash.it/1110/890">
+                        <img src="http://dummyimage.com/1110x890/e0e0e0/333.jpg" >
                     </a>
                     <a href="javascript:void(0);">
-                        <img src="https://unsplash.it/1110/890">
+                        <img src="http://dummyimage.com/1110x890/e0e0e0/333.jpg" >
                     </a>
                 </section>
+                
                 <section class="banner-slider">
-                    <a href="javascript:void(0);">
-                        <img src="https://unsplash.it/720/460" >
-                    </a>
-                    <a href="javascript:void(0);">
-                        <img src="https://unsplash.it/720/460" >
-                    </a>
-                    <a href="javascript:void(0);">
-                        <img src="https://unsplash.it/720/460" >
-                    </a>
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <a href="javascript:void(0);">
+                                    <img src="http://dummyimage.com/720x600/e0e0e0/333.jpg" >
+                                </a> 
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="javascript:void(0);">
+                                    <img src="http://dummyimage.com/720x600/e0e0e0/333.jpg" >
+                                </a> 
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="javascript:void(0);">
+                                    <img src="http://dummyimage.com/720x600/e0e0e0/333.jpg" >
+                                </a> 
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="swiper-button-prev"></button>
+                    <button class="swiper-button-next"></button>
                 </section>
+
                 <section class="top-brand">
                     <h3 class="-left">Top Brand</h3>
                     <a href="javascript:void(0);" class="-right">All Brand</a>
                     <div class="row">
                         <a href="javascript:void(0);">
-                            <img src="https://unsplash.it/530/240" alt=""></a>
+                            <img src="http://dummyimage.com/530x240/e0e0e0/333.jpg" ></a>
                         <a href="javascript:void(0);">
-                            <img src="https://unsplash.it/530/240" alt=""></a>
+                            <img src="http://dummyimage.com/530x240/e0e0e0/333.jpg" ></a>
                         <a href="javascript:void(0);">
-                            <img src="https://unsplash.it/530/240" alt=""></a>
+                            <img src="http://dummyimage.com/530x240/e0e0e0/333.jpg" ></a>
                         <a href="javascript:void(0);">
-                            <img src="https://unsplash.it/530/240" alt=""></a>
+                            <img src="http://dummyimage.com/530x240/e0e0e0/333.jpg" ></a>
                     </div>
                 </section>
             </article>
         </main>
 
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-        <script src="js/plugins.js"></script>
+        <script src="bower_components/Swiper/dist/js/swiper.jquery.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                //initialize swiper when document ready  
+                var mySwiper2 = new Swiper ('.banner-slider .swiper-container', {
+                  // Optional parameters
+                  loop: true,
+                  slidesPerView: 3,
+                  spaceBetween: 28,
+                  slidesPerGroup: 1,
+                  autoplay: 3000,
+                  autoplayDisableOnInteraction: true,
+                  speed: 800
+                })
+
+                // Previous Button 
+                $('.banner-slider > .swiper-button-prev').on('click', function(){
+                    mySwiper2.slidePrev()
+                })
+                // Next Button 
+                $('.banner-slider > .swiper-button-next').on('click', function(){
+                    mySwiper2.slideNext()
+                })          
+            });
+        </script>
 
     </body>
 </html>

@@ -27,10 +27,6 @@ img {
 	}
 }
 
-.banner-slider {
-	@include columns((3), $margin: 15px);
-}
-
 .top-brand {
 	margin: 15px auto 20px;
 	h3 {
@@ -136,5 +132,41 @@ img {
 		.-foot {
 			padding-top: 9.8%;
 		}
+	}
+}
+
+/*----------  Swiper JS  ----------*/
+.banner-slider {
+	// @include columns((3), $margin: 15px);
+	position: relative;
+	margin: 0 0 10px;
+
+	a {
+		display:block;
+	}
+}
+.swiper-button-prev, .swiper-button-next {
+	border: none;
+	background-color: transparent;
+	padding: 0;
+	@include size(32px 48px);
+
+	&:focus {
+		outline: none;
+	}
+}
+.swiper-button-prev {
+	@include retina-image('../img/chevron-left', 32px auto);
+	left: 0;
+
+	@include media($rwd-widescreen) {
+		left: -16px;
+	}
+}
+.swiper-button-next {
+	@include retina-image('../img/chevron-right', 32px auto);
+	right: 0;
+	@include media($rwd-widescreen) {
+		right: -16px;
 	}
 }
